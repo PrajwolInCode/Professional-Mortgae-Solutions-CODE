@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<title>Calculators | Professional Mortgage Solutions</title>
+<meta content="From first home to portfolio growth — structured lending strategies tailored to your long-term property goals." name="description"/>
+<script>document.documentElement.classList.add('js');</script>
+<link href="https://www.professionalmortgagesolutions.com.au/calculators.html" rel="canonical"/>
+<meta content="Professional Mortgage Solutions" property="og:site_name"/>
+<meta content="Professional Mortgage Solutions" property="og:title"/>
+<meta content="From first home to portfolio growth — structured lending strategies tailored to your long-term property goals." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.professionalmortgagesolutions.com.au/calculators.html" property="og:url"/>
+<meta content="https://www.professionalmortgagesolutions.com.au/assets/og-image-v2.png" property="og:image"/>
+<meta content="https://www.professionalmortgagesolutions.com.au/assets/og-image-v2.png" property="og:image:secure_url"/>
+<meta content="image/png" property="og:image:type"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="Professional Mortgage Solutions logo" property="og:image:alt"/>
+<meta content="en_AU" property="og:locale"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Professional Mortgage Solutions" name="twitter:title"/>
+<meta content="From first home to portfolio growth — structured lending strategies tailored to your long-term property goals." name="twitter:description"/>
+<meta content="https://www.professionalmortgagesolutions.com.au/assets/og-image-v2.png" name="twitter:image"/>
+<link href="assets/favicon.png" rel="icon" type="image/png"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="styles.css" rel="stylesheet"/>
+</head>
+<body>
+<a class="skipLink" href="#main">Skip to content</a>
+<header class="header" id="top">
+<div class="container header__inner">
+<a aria-label="Professional Mortgage Solutions Home" class="brand" href="index.html">
+<img alt="Professional Mortgage Solutions logo" src="assets/logo-transparent.png"/>
+</a>
+<button aria-controls="siteNav" aria-expanded="false" aria-label="Open menu" class="navToggle">
+<span></span><span></span><span></span>
+</button>
+<nav aria-label="Primary navigation" class="nav" id="siteNav">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="mortgage-solutions.html">Mortgage Solutions</a>
+<a href="process.html">Process</a>
+<a aria-current="page" href="calculators.html">Calculators</a>
+<a href="faq.html">FAQ</a>
+<a href="contact.html">Contact</a>
+<a class="btn btn--small" href="contact.html">Book a call</a></nav>
+</div>
+</header>
+<main id="main">
+<!-- Calculators -->
+<section class="section section--alt" id="calculators">
+<div class="container">
+<div class="section__head" data-reveal="">
+<p class="kicker">CALCULATORS</p>
+<h2>Run the numbers — then let’s turn them into a clear next step.</h2>
+<p class="muted">
+        We’ve designed these calculators to give you a clearer view of the numbers lenders typically consider.
+        Results are a guide only and do not constitute financial advice or a guarantee of approval.
+      </p>
+</div>
+<div class="calcButtons" data-reveal="" data-calc-nav="">
+<button type="button" class="btn btn--small btn--ghost" data-calc-target="calc-repayment" aria-controls="calc-repayment" aria-expanded="false">Repayment calculator</button>
+<button type="button" class="btn btn--small btn--ghost" data-calc-target="calc-how-much-borrow" aria-controls="calc-how-much-borrow" aria-expanded="false">Borrowing capacity</button>
+<button type="button" class="btn btn--small btn--ghost" data-calc-target="calc-stamp-duty" aria-controls="calc-stamp-duty" aria-expanded="false">Stamp duty</button>
+<button type="button" class="btn btn--small btn--ghost" data-calc-target="calc-rentvesting" aria-controls="calc-rentvesting" aria-expanded="false">Rentvesting</button>
+</div>
+<div class="calcWrap hidden" data-reveal="" id="calc-repayment">
+<!-- Repayment -->
+<div class="calcPanel is-active" id="calc-repay">
+<div class="calcPanelInner">
+<div class="calcInputs">
+<h3>Repayment calculator</h3>
+<form autocomplete="off" class="calcForm" id="calcRepay">
+<label class="field">
+<span>Loan amount</span>
+<div class="money"><span>$</span><input inputmode="numeric" min="0" name="loan" step="1000" type="number" value="600000"/></div>
+</label>
+<label class="field">
+<span>Loan term (years)</span>
+<input inputmode="numeric" min="1" name="termYears" step="1" type="number" value="30"/>
+</label>
+<label class="field">
+<span>Interest rate (%)</span>
+<input inputmode="decimal" min="0" name="rate" step="0.01" type="number" value="6.50"/>
+</label>
+<div class="subhead">Additional repayment</div>
+<label class="field">
+<span>Additional repayment frequency</span>
+<select name="freq">
+<option value="weekly">Weekly</option>
+<option value="fortnightly">Fortnightly</option>
+<option selected="" value="monthly">Monthly</option>
+</select>
+</label>
+<label class="field">
+<span>Additional repayment</span>
+<div class="money"><span>$</span><input inputmode="numeric" min="0" name="extra" step="10" type="number" value="100"/></div>
+</label>
+</form>
+</div>
+<div class="calcOutputs">
+<div class="chartCard">
+<div class="chartTitle">Loan Amount</div>
+<div aria-label="Repayments comparison chart" class="chart" id="repayChart"></div>
+</div>
+<div class="summaryStrip repayStrip">
+<div class="summaryBox big">
+<div class="summaryLabel">Your approximate repayments would be</div>
+<div class="summaryValue" id="repayPayment">$—</div>
+<div class="micro muted" id="repayFreqNote">per month</div>
+</div>
+<div class="summaryBox">
+<div class="kv">
+<div class="kvRow"><span>Total repayments</span><strong id="repayTotal">$—</strong></div>
+<div class="kvRow"><span class="muted">Total interest paid</span><strong class="muted" id="repayInterest">$—</strong></div>
+<div class="kvRow"><span>Additional repayments</span><strong id="repayExtraTotal">$—</strong></div>
+<div class="kvRow"><span>Total saving</span><strong id="repaySaving">$—</strong></div>
+<div class="kvRow"><span>Years saved</span><strong id="repayYearsSaved">—</strong></div>
+</div>
+</div>
+</div>
+<p class="micro muted calcNote">
+                    Guide only. This calculator approximates extra repayments by converting them to a monthly equivalent.
+                    Actual outcomes vary by lender, repayment schedule, and interest calculations.
+                  </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Borrowing capacity -->
+
+<div class="calcWrap hidden" data-reveal="" id="calc-how-much-borrow">
+<!-- Borrowing -->
+<div class="calcPanel is-active" id="calc-borrow">
+<div class="calcPanelInner">
+<div class="calcInputs">
+<h3>Borrowing capacity calculator</h3>
+<form autocomplete="off" class="calcForm" id="calcBorrow">
+<div class="fieldRow">
+<div class="labelSm">Joint application</div>
+<div aria-label="Joint application" class="segmented" role="group">
+<label><input checked="" name="joint" type="radio" value="yes"/> <span>Yes</span></label>
+<label><input name="joint" type="radio" value="no"/> <span>No</span></label>
+</div>
+</div>
+<label class="field">
+<span>No. of dependants</span>
+<select name="dependants">
+<option selected="" value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5+</option>
+</select>
+</label>
+<div class="subhead">Loan details</div>
+<div class="twoCol">
+<label class="field">
+<span>Interest rate (%)</span>
+<input inputmode="decimal" min="0" name="rate" step="0.01" type="number" value="6.50"/>
+</label>
+<label class="field">
+<span>Loan term (years)</span>
+<input inputmode="numeric" min="1" name="termYears" step="1" type="number" value="30"/>
+</label>
+</div>
+<div class="subhead">Income</div>
+<div class="fieldRow">
+<div class="labelSm">Income type</div>
+<div aria-label="Income type" class="segmented" role="group">
+<label><input checked="" name="incomeType" type="radio" value="net"/> <span>Net</span></label>
+<label><input name="incomeType" type="radio" value="gross"/> <span>Gross</span></label>
+</div>
+</div>
+<label class="field">
+<span>Frequency</span>
+<select name="incomeFreq">
+<option selected="" value="yearly">Yearly</option>
+<option value="monthly">Monthly</option>
+<option value="fortnightly">Fortnightly</option>
+<option value="weekly">Weekly</option>
+</select>
+</label>
+<label class="field">
+<span>Your income</span>
+<div class="money"><span>$</span><input inputmode="numeric" min="0" name="income1" step="1000" type="number" value="120000"/></div>
+</label>
+<label class="field jointOnly">
+<span>Partner’s income</span>
+<div class="money"><span>$</span><input inputmode="numeric" min="0" name="income2" step="1000" type="number" value="80000"/></div>
+</label>
+<label class="field">
+<span>Other income</span>
+<div class="money"><span>$</span><input inputmode="numeric" min="0" name="incomeOther" step="1000" type="number" value="0"/></div>
+</label>
+<div class="subhead">Expenses</div>
+<div class="twoCol">
+<label class="field">
+<span>State</span>
+<select name="state">
+<option selected="" value="VIC">VIC</option>
+<option value="NSW">NSW</option>
+<option value="QLD">QLD</option>
+<option value="WA">WA</option>
+<option value="SA">SA</option>
+<option value="TAS">TAS</option>
+<option value="ACT">ACT</option>
+<option value="NT">NT</option>
+</select>
+</label>
+<label class="field">
+<span>Frequency</span>
+<select name="expFreq">
+<option selected="" value="monthly">Monthly</option>
+<option value="yearly">Yearly</option>
+<option value="fortnightly">Fortnightly</option>
+<option value="weekly">Weekly</option>
+</select>
+</label>
+</div>
+<label class="field">
+<span>Living expenses</span>
+<div class="money"><span>$</span><input inputmode="numeric" min="0" name="livingExp" step="50" type="number" value="4500"/></div>
+</label>
+<label class="field">
+<span>Existing loan repayments</span>
+<div class="money"><span>$</span><input inputmode="numeric" min="0" name="otherLoans" step="50" type="number" value="0"/></div>
+</label>
+<label class="field">
+<span>Credit card limit</span>
+<div class="money"><span>$</span><input inputmode="numeric" min="0" name="ccLimit" step="500" type="number" value="0"/></div>
+</label>
+<div class="fieldRow">
+<div class="labelSm">Safety buffer</div>
+<label class="selectInline">
+<select name="buffer">
+<option value="0.10">10%</option>
+<option selected="" value="0.20">20%</option>
+<option value="0.30">30%</option>
+</select>
+<span class="muted micro">of surplus kept aside</span>
+</label>
+</div>
+<div class="hemRow micro muted">
+                      Living expenses (HEM estimate): <strong id="hemValue">$—</strong>
+<span class="muted">We use the higher of your entered living expenses and this estimate.</span>
+</div>
+</form>
+</div>
+<div class="calcOutputs">
+<div class="summaryStrip">
+<div class="summaryBox">
+<div class="summaryLabel">You can borrow up to approximately</div>
+<div class="summaryValue" id="borrowMax">$—</div>
+</div>
+<div class="summaryBox">
+<div class="summaryLabel">Your monthly repayments would be</div>
+<div class="summaryValue" id="borrowPay">$—</div>
+</div>
+</div>
+<div class="chartCard">
+<div class="chartTitle">Amount Owing</div>
+<div aria-label="Borrowing capacity chart" class="chart" id="borrowChart"></div>
+</div>
+<p class="micro muted calcNote">
+                    Guide only. This estimate uses your income/expenses plus a safety buffer and a simplified credit card minimum repayment assumption.
+                    Lender servicing methods vary and can materially change the result.
+                  </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Stamp duty -->
+<div class="calcWrap hidden" data-reveal="" id="calc-stamp-duty">
+<div class="calcPanel is-active" id="calc-stamp">
+<div class="calcPanelInner">
+<div class="calcInputs">
+<h3>Stamp duty calculator</h3>
+<form autocomplete="off" class="calcForm" id="calcStamp">
+<label class="field">
+<span>Property price</span>
+<div class="money"><span>$</span><input inputmode="numeric" min="0" name="price" step="1000" type="number" value="750000"/></div>
+</label>
+<div class="twoCol">
+<label class="field">
+<span>State</span>
+<select name="state">
+<option value="NSW">NSW</option>
+<option selected="" value="VIC">VIC</option>
+<option value="QLD">QLD</option>
+<option value="SA">SA</option>
+<option value="WA">WA</option>
+<option value="TAS">TAS</option>
+<option value="ACT">ACT</option>
+<option value="NT">NT</option>
+</select>
+</label>
+<label class="field">
+<span>Purchase type</span>
+<select name="type">
+<option selected="" value="PPOR">Primary residence</option>
+<option value="INVESTMENT">Investment</option>
+</select>
+</label>
+</div>
+<label class="checkLine">
+<input name="fhb" type="checkbox"/>
+<span>First home buyer (PPOR)</span>
+</label>
+<label class="checkLine">
+  <input name="foreign" type="checkbox"/>
+  <span>Foreign purchaser (may attract surcharge)</span>
+</label>
+<p class="micro muted" style="margin-top:6px;">Estimates only. Surcharges and concessions depend on eligibility and contract details.</p>
+</form>
+</div>
+<div class="calcOutputs">
+<div class="summaryStrip">
+<div class="summaryBox">
+<div class="summaryLabel">Estimated stamp duty</div>
+<div class="summaryValue" id="stampDuty">$—</div>
+</div>
+<div class="summaryBox">
+<div class="summaryLabel">Total upfront (price + duty)</div>
+<div class="summaryValue" id="stampTotal">$—</div>
+</div>
+</div>
+<div class="chartCard">
+<div class="chartTitle">Price vs duty</div>
+<div aria-label="Stamp duty chart" class="chart" id="stampChart"></div>
+</div>
+<div class="kv">
+<div class="kvRow"><span>Duty as % of price</span><strong id="stampPct">—</strong></div>
+<div class="kvRow"><span class="muted">Note</span><strong class="muted">Guide only</strong></div>
+</div>
+<p class="micro muted calcNote">
+          Estimates only. State rules, concessions and thresholds can change and may vary by property type and eligibility.
+        </p>
+</div>
+</div>
+</div>
+</div>
+<div class="calcWrap hidden" data-reveal="" id="calc-rentvesting"><div class="calcPanel is-active" id="calc-rentvesting-panel"><div class="calcPanelInner"><div class="calcInputs"><h3>Rentvesting</h3><p class="muted">Property decisions are influenced by lending structure, time horizon, cash flow approach, market conditions and long-term objectives. Small strategic differences can materially impact outcomes — including flexibility and future exit options.<br/><br/>For a personalised discussion tailored to your circumstances, we invite you to contact us. We will explore possible pathways aligned with your goals, so you can move forward with clarity and confidence.</p><a class="btn" href="contact.html">Enquire now</a></div><div class="calcOutputs"><div class="summaryBox"><h4 style="margin:0 0 10px; font-size:16px;">What we'll explore</h4><div class="kv"><div class="kvRow"><span>Lending structure</span><strong class="muted">Owner-occupied vs investment, offset/IO choices, split loans</strong></div><div class="kvRow"><span>Time horizon</span><strong class="muted">Short vs long-term plans and exit strategy</strong></div><div class="kvRow"><span>Cash flow approach</span><strong class="muted">Rent vs repayments, buffers, and ongoing costs</strong></div><div class="kvRow"><span>Market conditions</span><strong class="muted">Rates, rents, and growth assumptions</strong></div><div class="kvRow"><span>Long-term objectives</span><strong class="muted">Flexibility, portfolio options, and future purchases</strong></div></div></div><p class="micro muted calcNote">This isn’t financial advice — it’s a starting point. For tailored scenarios, book a quick call.</p></div></div></div></div>
+</div>
+</section>
+</main>
+<footer aria-label="Footer" class="footer">
+<div class="container footer__inner">
+<div class="footer__brand">
+<img alt="Professional Mortgage Solutions logo" src="assets/logo-transparent.png"/>
+<p class="micro muted">ABN: 93 694 277 131 • ACN: 694 277 131 • CRN: 575794</p>
+<p>
+        Information on this website is general in nature and does not take your objectives, financial situation, or needs into account.
+        Before acting, consider whether it’s appropriate for you and seek personal advice.
+      </p>
+</div>
+<div class="footer__links">
+  <div class="footerCol">
+    <div class="footerTitle">How we can help</div>
+    <a href="mortgage-solutions.html#first-home-buyers">First home buyers</a>
+    <a href="mortgage-solutions.html#refinance-review">Refinancing</a>
+    <a href="mortgage-solutions.html#investors-smsf">Investors</a>
+    <a href="mortgage-solutions.html">All mortgage solutions</a>
+  </div>
+  <div class="footerCol">
+    <div class="footerTitle">Tools</div>
+    <a href="calculators.html">Calculators</a>
+    <a href="calculators.html#calc-repayment">Repayment calculator</a>
+    <a href="calculators.html#calc-how-much-borrow">Borrowing capacity</a>
+    <a href="calculators.html#calc-stamp-duty">Stamp duty</a>
+    <a href="calculators.html#calc-rentvesting">Rentvesting</a>
+  </div>
+  <div class="footerCol">
+    <div class="footerTitle">About</div>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="process.html">Process</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</div>
+<div class="footer__bottom micro muted">© <span id="year"></span> Professional Mortgage Solutions Pty Ltd. All rights reserved.</div>
+</div>
+</footer>
+<a aria-label="Back to top" class="backTop" href="#top">↑</a>
+<script defer="" src="script.js"></script>
+</body>
+</html>

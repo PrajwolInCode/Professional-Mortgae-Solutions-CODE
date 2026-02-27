@@ -1,0 +1,16 @@
+# Force www + HTTPS (keeps social previews consistent)
+https://professionalmortgagesolutions.com.au/*  https://www.professionalmortgagesolutions.com.au/:splat  301!
+http://professionalmortgagesolutions.com.au/*   https://www.professionalmortgagesolutions.com.au/:splat  301!
+http://www.professionalmortgagesolutions.com.au/*  https://www.professionalmortgagesolutions.com.au/:splat  301!
+
+# Pretty thank-you URL + common case-variants
+/thank-you.html  /thank-you/      301
+/Thank-you.html  /thank-you/      301
+/Thank-You.html  /thank-you/      301
+/thank-you       /thank-you/      301
+/Thank-you       /thank-you/      301
+/Thank-You       /thank-you/      301
+
+# Loan enquiry page removed
+/loan-enquiry        /contact.html   301
+/loan-enquiry.html   /contact.html   301
