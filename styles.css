@@ -1272,6 +1272,10 @@ input[type="range"]{
 .footer__bottom{ margin-top: 12px; }
 
 .footer p{ font-size: .82rem; line-height: 1.6; color: var(--muted); }
+
+.footer__brand a{ color: var(--brand); font-weight: 600; }
+.footer__brand a:hover{ color: var(--accent2); }
+
 .footer .micro{ font-size: .78rem; }
 
 /* Back to top */
