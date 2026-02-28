@@ -31,6 +31,7 @@
 <link href="styles.css" rel="stylesheet"/>
 </head>
 <body>
+<div class="scrollProgress" aria-hidden="true"><span class="scrollProgress__bar"></span></div>
 <a class="skipLink" href="#main">Skip to content</a>
 <header class="header" id="top">
 <div class="container header__inner">
@@ -61,6 +62,8 @@
 </picture>
 </div>
 <div aria-hidden="true" class="hero__overlay"></div>
+<div aria-hidden="true" class="hero__ambient hero__ambient--one"></div>
+<div aria-hidden="true" class="hero__ambient hero__ambient--two"></div>
 <div class="container hero__grid hero__grid--single">
 <div class="hero__content" data-reveal="">
 <p class="eyebrow">Residential Loans • SMSF • Investment Lending • Mortgage Restructure/Refinance</p>
@@ -74,90 +77,84 @@
 </div>
 </div>
 </section>
-<section aria-label="Home page overview" class="section section--tight">
-  <div class="container">
+<section aria-label="Trust indicators" class="trustBand sectionFlowEdge">
+  <div class="container trustBand__grid" data-reveal="">
+    <div class="trustBand__item">
+      <span class="trustBand__label">Service promise</span>
+      <strong>Client-first & fee-free</strong>
+    </div>
+    <div class="trustBand__item">
+      <span class="trustBand__label">Coverage</span>
+      <strong>First home, refinance, investor & SMSF</strong>
+    </div>
+    <div class="trustBand__item">
+      <span class="trustBand__label">Approach</span>
+      <strong>Structured advice with lender choice</strong>
+    </div>
+  </div>
+</section>
+
+<section aria-label="Home page overview" class="section section--alt section--flow">
+  <div class="container flowIntro">
     <div class="section__head" data-reveal="">
-      <p class="kicker">Looking for a trusted mortgage broker in Geelong?</p>
-      <h2>Professional Advice. Competitive mortgage rates. Personalised solutions.</h2>
+      <p class="kicker">Trusted mortgage broker in Geelong</p>
+      <h2>Professional advice, premium service, and lending that fits your long-term strategy.</h2>
       <p class="muted">
-        At <strong>Professional Mortgage Solutions</strong>, we provide clear, strategic home loan advice tailored to your goals. Whether you’re buying your first home, refinancing, or investing, we provide structured guidance designed to simplify complex decisions.
-      </p>
-      <p class="muted">
-        From initial planning through to settlement, we manage the process with care and precision — so you remain informed, prepared, and confident at every stage.
-      </p>
-      <p class="muted">
-        Our focus is not simply arranging finance, but ensuring you understand the structure, considerations, and long-term implications behind each option available to you.
+        At <strong>Professional Mortgage Solutions</strong>, we provide clear and strategic home loan advice tailored to your goals.
+        Whether you are purchasing your first home, reviewing your current loan, or scaling an investment portfolio,
+        we guide every decision with clarity and precision.
       </p>
       <div class="profile__actions">
-        <a class="btn" href="contact.html">Request an Appointment</a>
+        <a class="btn" href="contact.html">Apply / Request a Call Back</a>
         <a class="btn btn--ghost" href="mortgage-solutions.html">Explore mortgage solutions</a>
       </div>
     </div>
 
-    <div class="aboutGrid" data-reveal="">
-      <div class="card">
-        <h3>Why Choose Professional Mortgage Solutions?</h3>
-        <ul class="checklist">
-          <li>Access to a wide panel of lenders</li>
-          <li>Competitive interest rates</li>
-          <li>Personalised loan structuring advice</li>
-          <li>End-to-end application support</li>
-          <li>Ongoing reviews after settlement</li>
-        </ul>
-        <p class="muted">
-          As an experienced mortgage broker servicing Geelong, we focus on more than just rates — we ensure your loan structure aligns with your long-term financial plans.
-        </p>
-      </div>
+    <aside class="card flowPanel" data-reveal="">
+      <h3>Why clients choose us</h3>
+      <ul class="checklist">
+        <li>Access to a broad panel of lenders and policy options</li>
+        <li>Loan structuring focused on your long-term financial outcomes</li>
+        <li>End-to-end support from planning to settlement</li>
+        <li>Ongoing post-settlement reviews as your goals evolve</li>
+      </ul>
+      <p class="micro muted">We charge no fees to clients. Lender and Government fees and charges may apply.</p>
+    </aside>
+  </div>
+</section>
 
-      <div class="card">
-        <h3>Home Loan Services in Geelong</h3>
-        <ul class="checklist">
-          <li>First Home Buyer Loan</li>
-          <li>Refinancing &amp; Loan Reviews</li>
-          <li>Investment Property Loans</li>
-          <li>Construction &amp; Building Loans</li>
-          <li>Restructuring &amp; loan health check</li>
-          <li>SMSF lending</li>
-          <li>Self-Employed &amp; Complex Income Loans</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>Transparent &amp; Fee-Free Service</h3>
-        <p class="muted"><strong>We charge no fees to our clients.</strong></p>
-        <p class="muted">
-          We are paid a commission by the lender you choose, and this is fully disclosed upfront.
-        </p>
-        <p class="micro muted">(Lender and Government fees and charges may apply.)</p>
-      </div>
-
-      <div class="card">
-        <h3>Speak to a Professional Mortgage Broker in Geelong</h3>
-        <p class="muted">Book a free consultation and receive clear, strategic guidance on your next property decision.</p>
-        <div class="profile__actions">
-          <a class="btn" href="contact.html">Book Your Free Consultation</a>
-          <a class="btn btn--ghost" href="about.html">Meet Prabhat</a>
-        </div>
-      </div>
+<section class="section section--flowCards" aria-label="Mortgage pathways">
+  <div class="container">
+    <div class="section__head" data-reveal="">
+      <p class="kicker">A clearer path to the right loan</p>
+      <h2>Designed to flow from strategy to settlement.</h2>
     </div>
 
-    <div class="aboutStack">
-      <div class="card">
-        <h3>Mortgage solutions</h3>
-        <p class="muted">Explore the lending scenarios we support — including first home buyers, refinance reviews, investors, and SMSF lending.</p>
-        <div class="profile__actions">
-          <a class="btn btn--small" href="mortgage-solutions.html">Open mortgage solutions</a>
-          <a class="btn btn--small btn--ghost" href="contact.html">Ask a question</a>
-        </div>
-      </div>
+    <div class="flowCards" data-reveal="">
+      <article class="card flowCard">
+        <h3>1. Strategy Session</h3>
+        <p class="muted">We map your position, borrowing objectives, and timeline so every recommendation starts with context.</p>
+      </article>
+      <article class="card flowCard">
+        <h3>2. Lending Structure</h3>
+        <p class="muted">We compare lenders, model scenarios, and present options that balance flexibility, cost, and risk.</p>
+      </article>
+      <article class="card flowCard">
+        <h3>3. Application to Approval</h3>
+        <p class="muted">We coordinate documentation, lender communication, and milestones for a smoother approval experience.</p>
+      </article>
+      <article class="card flowCard">
+        <h3>4. Settlement & Beyond</h3>
+        <p class="muted">After settlement, we stay in touch with structured reviews to keep your loan aligned with your next goals.</p>
+      </article>
+    </div>
 
-      <div class="card">
-        <h3>Calculators</h3>
-        <p class="muted">Estimate borrowing power and repayments, then we can help you translate the numbers into a clear lending plan.</p>
-        <div class="profile__actions">
-          <a class="btn btn--small" href="calculators.html">Open calculators</a>
-        </div>
+    <div class="ctaBanner flowCta" data-reveal="">
+      <div>
+        <h3>Ready to move forward with confidence?</h3>
+        <p class="muted">Speak with a professional mortgage broker and get a tailored plan for your next property decision.</p>
       </div>
+      <a class="btn" href="contact.html">Book your consultation</a>
     </div>
   </div>
 </section>
@@ -167,6 +164,7 @@
 <div class="footer__brand">
 <img alt="Professional Mortgage Solutions logo" src="assets/logo-transparent.png"/>
 <p class="micro muted">ABN: 93 694 277 131 • ACN: 694 277 131 • CRN: 575794</p>
+<p class="micro muted"><strong>Email:</strong> <a href="mailto:info@professionalmortgagesolutions.com.au">info@professionalmortgagesolutions.com.au</a></p>
 <p>
         Information on this website is general in nature and does not take your objectives, financial situation, or needs into account.
         Before acting, consider whether it’s appropriate for you and seek personal advice.
@@ -174,7 +172,7 @@
 </div>
 <div class="footer__links">
   <div class="footerCol">
-    <div class="footerTitle">How we can help</div>
+    <div class="footerTitle">Mortgage Solutions</div>
     <a href="mortgage-solutions.html#first-home-buyers">First home buyers</a>
     <a href="mortgage-solutions.html#refinance-review">Refinancing</a>
     <a href="mortgage-solutions.html#investors-smsf">Investors</a>
@@ -183,14 +181,15 @@
   <div class="footerCol">
     <div class="footerTitle">Tools</div>
     <a href="calculators.html">Calculators</a>
-    <a href="calculators.html#calc-how-much-borrow">Borrowing capacity</a>
     <a href="calculators.html#calc-repayment">Repayment calculator</a>
+    <a href="calculators.html#calc-how-much-borrow">Borrowing capacity</a>
     <a href="calculators.html#calc-stamp-duty">Stamp duty</a>
+    <a href="calculators.html#calc-rentvesting">Rentvesting</a>
   </div>
   <div class="footerCol">
-    <div class="footerTitle">About</div>
-    <a href="index.html">Home</a>
+    <div class="footerTitle">Home</div>
     <a href="about.html">About</a>
+    <a href="index.html">Home</a>
     <a href="process.html">Process</a>
     <a href="faq.html">FAQ</a>
     <a href="contact.html">Contact</a>

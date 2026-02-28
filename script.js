@@ -92,6 +92,78 @@ const onScroll = () => {
 window.addEventListener('scroll', onScroll, { passive: true });
 onScroll();
 
+
+
+// Premium UX layer (safe progressive enhancement)
+(() => {
+  const header = document.querySelector('.header');
+  const progressBar = document.querySelector('.scrollProgress__bar');
+  const hero = document.querySelector('.hero');
+  const magneticBtns = Array.from(document.querySelectorAll('.btn'));
+  const tiltCards = Array.from(document.querySelectorAll('.card, .tile, .serviceCard'));
+  const allowPointerFX = window.matchMedia?.('(pointer:fine)')?.matches && !reduceMotion;
+
+  const updateScrollUX = () => {
+    const y = window.scrollY || window.pageYOffset || 0;
+    if (header) header.classList.toggle('is-scrolled', y > 24);
+
+    if (progressBar){
+      const doc = document.documentElement;
+      const max = Math.max(1, doc.scrollHeight - window.innerHeight);
+      const pct = Math.min(100, Math.max(0, (y / max) * 100));
+      progressBar.style.transform = `scaleX(${pct / 100})`;
+    }
+  };
+
+  window.addEventListener('scroll', updateScrollUX, { passive: true });
+  window.addEventListener('resize', updateScrollUX);
+  updateScrollUX();
+
+  if (!allowPointerFX) return;
+
+  magneticBtns.forEach((btn) => {
+    btn.classList.add('btn--magnetic');
+    btn.addEventListener('pointermove', (e) => {
+      const r = btn.getBoundingClientRect();
+      const x = (e.clientX - r.left - r.width / 2) / r.width;
+      const y = (e.clientY - r.top - r.height / 2) / r.height;
+      btn.style.transform = `translate(${x * 8}px, ${y * 7}px)`;
+    });
+    btn.addEventListener('pointerleave', () => {
+      btn.style.transform = '';
+    });
+  });
+
+  tiltCards.forEach((card) => {
+    card.classList.add('revealTilt');
+    card.addEventListener('pointermove', (e) => {
+      const r = card.getBoundingClientRect();
+      const rx = ((e.clientY - r.top) / r.height - 0.5) * -5;
+      const ry = ((e.clientX - r.left) / r.width - 0.5) * 6;
+      card.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-2px)`;
+    });
+    card.addEventListener('pointerleave', () => {
+      card.style.transform = '';
+    });
+  });
+
+  if (hero){
+    const ambients = hero.querySelectorAll('.hero__ambient');
+    hero.addEventListener('pointermove', (e) => {
+      const r = hero.getBoundingClientRect();
+      const mx = (e.clientX - r.left) / r.width - 0.5;
+      const my = (e.clientY - r.top) / r.height - 0.5;
+      ambients.forEach((el, i) => {
+        const factor = i === 0 ? 16 : 11;
+        el.style.transform = `translate3d(${mx * factor}px, ${my * factor}px, 0)`;
+      });
+    });
+    hero.addEventListener('pointerleave', () => {
+      ambients.forEach((el) => { el.style.transform = ''; });
+    });
+  }
+})();
+
 // Helpers
 const fmtAUD = (n) => {
   const v = Number(n);
@@ -797,11 +869,14 @@ document.querySelectorAll('.faqQ').forEach((btn) => {
   setHeader();
   setHeaderHeight();
 
-  // Scroll progress
-  const progress = document.createElement('div');
-  progress.className = 'scrollProgress';
-  progress.innerHTML = '<div class="scrollProgress__bar"></div>';
-  document.body.prepend(progress);
+  // Scroll progress (reuse existing node if present)
+  const progress = document.querySelector('.scrollProgress') || (() => {
+    const el = document.createElement('div');
+    el.className = 'scrollProgress';
+    el.innerHTML = '<div class="scrollProgress__bar"></div>';
+    document.body.prepend(el);
+    return el;
+  })();
   const bar = progress.querySelector('.scrollProgress__bar');
 
   const setProgress = () => {
