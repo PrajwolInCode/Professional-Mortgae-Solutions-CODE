@@ -699,6 +699,8 @@ input:focus, select:focus, textarea:focus{
 .profile picture{ width: 200px; }
 .profile__meta{ display: grid; gap: 6px; margin: 10px 0 0; }
 .profile__meta a{ color: var(--brand); font-weight: 600; }
+
+.inlineContactLink{ color: var(--brand); font-weight: 600; }
 .profile__actions{ display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
 
 .profile__bio{ margin-top: 10px; }
